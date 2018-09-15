@@ -23,8 +23,12 @@ var PORT = process.env.PORT || 8080;
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-///Router!!!!!
+///Routing!!!!!
 
 
 require("./app/routing/apirout.js")(app);
 require("./app/routing/htmlroutes.js")(app);
+
+app.listen(process.env.PORT || 8080, function(){
+    console.log("App listening on PORT" + process.env.PORT);
+})
