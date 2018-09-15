@@ -225,14 +225,21 @@
 $(".submit").on("click", function (event){
     event.preventDefault();
 
+    var scoreArray = [];
+
+    for (i=1; i<11; i+=1){
+        scoreArray.push(parseInt($("#question" + i).val().substring(0,1)));
+    }
+
     var newFriend = {
         name: $("#nameInput").val().trim(),
         photo: $("#imageURL").val().trim(),
-        score:{
-            
-        }
-    }
+        score:scoreArray        
+    };
+    console.log(newFriend);
 })
+
+
 
 
 </script>
