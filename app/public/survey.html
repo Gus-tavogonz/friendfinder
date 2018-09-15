@@ -43,7 +43,7 @@
 
     <!--NAME AND LINK TO URL-->
    
-    <form>
+    <form name="surveyName">
     <div class="form-group">
     <label for="exampleFormControlTextarea1">Name</label>
     <textarea class="form-control" id="nameInput" rows="1"></textarea>
@@ -197,7 +197,7 @@
     </div>
 
     <div class="col-md-12">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary submit">Submit</button>
     </div>
   </div>
 
@@ -215,6 +215,28 @@
         </div>
     </div>
 </div>
+
+
+
+   
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(".submit").on("click", function (event){
+    event.preventDefault();
+
+    var newFriend = {
+        name: $("#nameInput").val().trim(),
+        photo: $("#imageURL").val().trim(),
+        score:{
+            
+        }
+    }
+})
+
+
+</script>
+
     
 </body>
 </html>
