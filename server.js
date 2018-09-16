@@ -26,9 +26,9 @@ app.use(bodyParser.json());
 ///Routing!!!!!
 
 
-require("./app/routing/apirout.js")(app);
+require("./app/routing/apiroute.js")(app);
 require("./app/routing/htmlroutes.js")(app);
 
 app.listen(process.env.PORT || 8080, function(){
-    console.log("App listening on PORT" + process.env.PORT);
+    console.log("App listening on PORT " + PORT);
 })
