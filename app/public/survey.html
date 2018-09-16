@@ -294,11 +294,10 @@ $(".submit").on("click", function (event){
       var friendPhoto = '<img width="250px" src=' + bestOption.photo + ">";
       
       //modal
-
-      
-      MicroModal.show('modal-1')
-      $("#modal-1-title").html(friendName);
-      $(".modal-1-content").html(friendPhoto);
+      var modal = $(this)
+      $("#friendModal").modal('show')
+      $("#friendModal").html(friendName);
+      $(".modal-body").html(friendPhoto);
 
       $("#surveyForm")[0].reset();
     });
@@ -316,32 +315,28 @@ function add(a,b){
 </script>
 
 
-<div id="modal-1" aria-hidden="true">
-
-    <!-- [2] -->
-    <div tabindex="-1" data-micromodal-close>
-  
-      <!-- [3] -->
-      <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" >
-  
-  
-        <header>
-          <h2 id="modal-1-title">
-            This is Your New best Friend!
-          </h2>
-  
-          <!-- [4] -->
-          <button aria-label="Close modal" data-micromodal-close></button>
-        </header>
-  
-        <div id="modal-1-content">
-          
+<div class="modal" tabindex="-1" id="friendModal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your New Friend is!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-  
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
-  
+
+
+
 
 
     
